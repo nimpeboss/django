@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Study Sessions Dashboard</h1>
+  {% if session %}
+    <ul>
+      {% for s in session %}
+        <li>{{ s.date }} — {{ s.subject }}: {{ s.minutes }} min</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No study sessions yet.</p>
+  {% endif %}
+
+  <p><a href="{% url 'home' %}">Home</a> | <a href="{% url 'add_subject' %}">Add subject</a></p>
+</body>
+</html>
